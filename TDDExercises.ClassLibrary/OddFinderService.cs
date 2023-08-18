@@ -13,5 +13,10 @@ namespace TDDExercises.ClassLibrary
             if (num % 2 != 0)
                 return true; return false;
         }
+        public bool IsNumberEven(int num)
+        {
+            if (num % 2 == 0) 
+                return true; return false;
+        }
     }
 }
