@@ -12,13 +12,13 @@ namespace TDDExercises.ClassLibrary
         {
             int min = int.MaxValue;
             int max = int.MinValue;
+
             foreach (int value in values)
             {
-                if (value < min)
-                    min = value;
-                else if (value > max)
-                    max = value;
+                min = Math.Min(min, value);
+                max = Math.Max(max, value);
             }
+
             return new int[] { min, max };
         }
     }

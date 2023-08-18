@@ -10,12 +10,7 @@ namespace TDDExercises.ClassLibrary
     {
         public int AbsoluteSummation(int[] values)
         {
-            int tol = 0;
-            foreach (int value in values)
-            {
-                tol += Math.Abs(value);
-            }
-            return tol;
+            return values.Sum(value => Math.Abs(value));
         }
     }
 }

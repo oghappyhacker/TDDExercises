@@ -4,6 +4,7 @@ using TDDExercises.ClassLibrary;
 
 namespace TDDExercises.Test
 {
+    
     public class AgeToDaysServiceTests
     {
         private readonly AgeToDaysService _sut;
@@ -17,7 +18,6 @@ namespace TDDExercises.Test
         public void AgeToDays_Should_Pass(double age,double expected)
         {
             var result = _sut.AgeToDays(age);
-
             result.Should().Be(expected);
         }
     }

@@ -10,10 +10,7 @@ namespace TDDExercises.ClassLibrary
     {
         public string LetterMultiple(char letter,int value)
         {
-            var wordsOfALetter = "";
-            for (var i = 0; i < value; i++)
-                wordsOfALetter += letter;
-            return wordsOfALetter;
+            return new string(letter,value);
         }
     }
 }

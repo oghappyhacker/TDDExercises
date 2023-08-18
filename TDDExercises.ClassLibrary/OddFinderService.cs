@@ -10,13 +10,11 @@ namespace TDDExercises.ClassLibrary
     {
         public bool IsNumberOdd(int num)
         {
-            if (num % 2 != 0)
-                return true; return false;
+            return num % 2 != 0;
         }
         public bool IsNumberEven(int num)
         {
-            if (num % 2 == 0) 
-                return true; return false;
+            return num % 2 == 0;
         }
     }
 }

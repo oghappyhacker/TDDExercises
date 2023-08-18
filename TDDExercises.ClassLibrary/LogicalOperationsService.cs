@@ -8,20 +8,24 @@ namespace TDDExercises.ClassLibrary
 {
     public class LogicalOperationsService
     {
-        public bool And(int numberOne,int numberTwo)
+        public bool PerformOperation(int numberOne, int numberTwo, Func<bool, bool, bool> operation)
         {
-            var convert = Convert.ToBoolean(numberOne) && Convert.ToBoolean(numberTwo);
-            return convert;
+            return operation(Convert.ToBoolean(numberOne), Convert.ToBoolean(numberTwo));
         }
-        public bool Not(int numberOne,int numberTwo)
+
+        public bool And(int numberOne, int numberTwo)
         {
-            var convert = Convert.ToBoolean(numberOne) && Convert.ToBoolean(numberTwo);
-            return !convert;
+            return PerformOperation(numberOne, numberTwo, (a, b) => a && b);
         }
-        public bool Or(int numberOne,int numberTwo)
+
+        public bool Not(int numberOne, int numberTwo)
         {
-            var converted = Convert.ToBoolean(numberOne) || Convert.ToBoolean(numberTwo);
-            return converted;
+            return !PerformOperation(numberOne, numberTwo, (a, b) => a && b);
+        }
+
+        public bool Or(int numberOne, int numberTwo)
+        {
+            return PerformOperation(numberOne, numberTwo, (a, b) => a || b);
         }
     }
 }

@@ -6,11 +6,11 @@ using System.Threading.Tasks;
 
 namespace TDDExercises.ClassLibrary
 {
-    public class MeanCalculatorService
+    public class WordReverserService
     {
-        public double GetMeanFromIEnumerable(IEnumerable<double> iEnumerable)
+        public string ReverseWord(string word)
         {
-            return iEnumerable.Sum() / iEnumerable.Count();
+            return string.Join("", word.Reverse());
         }
     }
 }

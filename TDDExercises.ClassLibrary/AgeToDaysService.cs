@@ -10,8 +10,7 @@ namespace TDDExercises.ClassLibrary
     {
         public double AgeToDays(double age)
         {
-            var ageToDays = age * 365.25;
-            return ageToDays;
+            return age * 365.25;
         }
     }
 }

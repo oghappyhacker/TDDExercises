@@ -10,8 +10,7 @@ namespace TDDExercises.ClassLibrary
     {
         public int GetLetterCount(string sentence,char character)
         {
-            int lenght = sentence.Count(c => c == character);
-            return lenght;
+            return sentence.Count(c => c == character);
         }
     }
 }
