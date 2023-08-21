@@ -16,13 +16,33 @@ namespace TDDExercises.Test
         {
             _sut = new LetterMultiplierService();
         }
-
         [Theory]
         [InlineData('J', 5, "JJJJJ")]
         public void LetterMultiple_Should_Pass(char letter, int value, string expected)
         {
             var result = _sut.LetterMultiple(letter, value);
             result.Should().Be(expected);
+        }
+        [Theory]
+        [InlineData('J', 5, "JJJJ")]
+        public void LetterMultiple_Should_Not_Pass(char letter, int value, string expected)
+        {
+            var result = _sut.LetterMultiple(letter, value);
+            result.Should().NotBe(expected);
+        }
+        [Theory]
+        [InlineData('J', 5, "JJJJJ")]
+        public void LetterMultipleAlt_Should_Pass(char letter, int value, string expected)
+        {
+            var result = _sut.LetterMultipleAlt(letter, value);
+            result.Should().Be(expected);
+        }
+        [Theory]
+        [InlineData('J', 5, "JJJJ")]
+        public void LetterMultipleAlt_Should_Not_Pass(char letter, int value, string expected)
+        {
+            var result = _sut.LetterMultipleAlt(letter, value);
+            result.Should().NotBe(expected);
         }
     }
 }

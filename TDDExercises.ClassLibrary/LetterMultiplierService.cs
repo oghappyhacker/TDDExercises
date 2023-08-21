@@ -12,5 +12,12 @@ namespace TDDExercises.ClassLibrary
         {
             return new string(letter,value);
         }
+        public string LetterMultipleAlt(char letter,int value)
+        {
+            var wordOfALetter = "";
+            for(var i = 0;i < value;i++)
+                wordOfALetter += letter;
+            return wordOfALetter;
+        }
     }
 }

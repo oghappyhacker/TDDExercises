@@ -16,13 +16,17 @@ namespace TDDExercises.Test
         {
             _sut = new OddFinderService();
         }
-        [Theory]
-        [InlineData(3, true)]
-        [InlineData(2, false)]
+        [Theory,InlineData(3, true),InlineData(2, false)]
         public void IsNumberOdd_Should_Pass(int num, bool expected)
         {
             var result = _sut.IsNumberOdd(num);
             result.Should().Be(expected);
+        }
+        [Theory,InlineData(2, true),InlineData(3,false)]
+        public void IsNumberOdd_Should_Not_Pass(int num, bool expected)
+        {
+            var result = _sut.IsNumberOdd(num);
+            result.Should().NotBe(expected);
         }
     }
 }

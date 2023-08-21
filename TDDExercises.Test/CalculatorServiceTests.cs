@@ -53,5 +53,19 @@ namespace TDDExercises.Test
             var result = _sut.Remainder(a,b);
             result.Should().Be(expected);
         }
+        [Theory]
+        [InlineData(10.0,5.0,5)]
+        public void Multiply_Should_Not_Pass(int a, int b, int expected)
+        {
+            var result = _sut.Multiply(a, b);
+            result.Should().NotBe(expected);
+        }
+        [Theory]
+        [InlineData(10,5,6)]
+        public void Subtract_Should_Not_Pass(int a,int b,int expected)
+        {
+            var result = _sut.Subtract(a,b);
+            result.Should().NotBe(expected);
+        }
     }
 }

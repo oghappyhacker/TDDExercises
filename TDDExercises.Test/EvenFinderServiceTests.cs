@@ -24,6 +24,11 @@ namespace TDDExercises.Test
             var result = _sut.IsNumberEven(number);
             result.Should().Be(expected);
         }
-
+        [Theory,InlineData(2, false)]
+        public void IsNumberEven_Should_Not_Pass(int number, bool expected)
+        {
+            var result = _sut.IsNumberEven(number);
+            result.Should().NotBe(expected);
+        }
     }
 }

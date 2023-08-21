@@ -17,13 +17,17 @@ namespace TDDExercises.Test
             _sut = new PalindromeCheckerService();
         }
         [Theory]
-        [InlineData("otto",true)]
-        [InlineData("otter",false)]
-        [InlineData("racecar",true)]
+        [InlineData("otto",true),InlineData("otter",false),InlineData("racecar",true)]
         public void PalindromeCheckerService_Should_Pass(string wordToCheck, bool expected)
         {
             var result = _sut.IsPalindrome(wordToCheck);
             result.Should().Be(expected);
+        }
+        [Theory,InlineData("ott1o",true)]
+        public void PalindromeCheckerService_Should_Not_Pass(string wordToCheck, bool expected)
+        {
+            var result = _sut.IsPalindrome(wordToCheck);
+            result.Should().NotBe(expected);
         }
     }
 }
